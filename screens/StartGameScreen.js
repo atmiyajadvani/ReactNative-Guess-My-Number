@@ -5,8 +5,16 @@ const StartGameScreen = (props) => {
     return (
         <View style={styles.inputContainer}>
             <TextInput style={styles.numberInput} maxLength={2} keyboardType="number-pad"  autoCapitalize='none' />
-            <PrimaryButton>Confirm</PrimaryButton>
-            <PrimaryButton>Reset</PrimaryButton>
+
+            <View style={styles.buttonsContainer}>
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton>Confirm</PrimaryButton>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton>Reset</PrimaryButton>
+                </View> 
+            </View>
+            
         </View>
     );
 }
@@ -14,6 +22,8 @@ const StartGameScreen = (props) => {
 const styles = StyleSheet.create({
 
     inputContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
         padding: 24,
         marginTop: 100,
         backgroundColor: '#4e0329',
@@ -37,8 +47,17 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         color: '#ddb25f',
         marginVertical: 8,
+    },
 
+    buttonsContainer: {
+        flexDirection: 'row',
+
+    },
+
+    buttonContainer: {
+        flex: 1,
     }
+
 });
 
 export default StartGameScreen;
