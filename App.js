@@ -21,7 +21,7 @@ export default function App() {
   }
 
   return (
-    <LinearGradient colors={[Colors.primary700, Colors.primary500 ]} style={styles.rootScreen}>
+    <LinearGradient colors={["#72063c", "#ddb52f" ]} style={styles.rootScreen}>
       <ImageBackground source={require('./assets/background.png')} imageStyle={styles.backgroundImage} style={styles.rootScreen} resizeMode="cover">
         <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
