@@ -4,6 +4,7 @@ import {useState} from 'react'
 
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function App() {
 
@@ -20,7 +21,7 @@ export default function App() {
   }
 
   return (
-    <LinearGradient colors={['#4e0329','#ddb25f' ]} style={styles.rootScreen}>
+    <LinearGradient colors={[Colors.primary700, Colors.primary500 ]} style={styles.rootScreen}>
       <ImageBackground source={require('./assets/background.png')} imageStyle={styles.backgroundImage} style={styles.rootScreen} resizeMode="cover">
         <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
