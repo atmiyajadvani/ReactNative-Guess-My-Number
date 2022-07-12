@@ -1,12 +1,12 @@
-import { Text, View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 import { useState, useEffect } from 'react';
+import {Ionicons} from '@expo/vector-icons';
 
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/ui/PrimaryButton';
 import Card from '../components/ui/Card';
 import InstructionText from '../components/ui/InstructionText';
-
 
 
 function generateRandomBetween(min, max, exclude) {
@@ -61,10 +61,10 @@ const GameScreen = ({userNumber, onGameOver}) => {
             <Title>Opponent's Screen</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card>
-                <InstructionText>Higher or Lower</InstructionText>
+                <InstructionText style={styles.InstructionText}>Higher or Lower</InstructionText>
                 <View style={styles.buttonsContainer}>
-                    <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')} style={styles.buttonContainer}>-</PrimaryButton>
-                    <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')} style={styles.buttonContainer}>+</PrimaryButton>
+                    <View style={styles.buttonContainer}><PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')} ><Ionicons name='md-remove' size={24} color="white"></Ionicons></PrimaryButton></View>
+                    <View style={styles.buttonContainer}><PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')} ><Ionicons name='md-add' size={24} color="white"></Ionicons></PrimaryButton></View>
                 </View>
             </Card>
         </View>
@@ -79,6 +79,10 @@ const styles = StyleSheet.create({
 
     buttonsContainer: {
         flexDirection: 'row',
+    },
+
+    InstructionText: {
+        marginBottom: 20,
     },
 
     buttonContainer: {
