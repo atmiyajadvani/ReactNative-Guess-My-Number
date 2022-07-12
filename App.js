@@ -29,13 +29,14 @@ export default function App() {
     setGameIsOver(false);
   }
 
-  function gameOverHandler() {
+  function gameOverHandler(numberOfRounds) {
     setGameIsOver(true);
+    setGuessRounds(numberOfRounds);
   }
 
   function startNewGameHandler() {
+    setUserNumber(null);
     setGuessRounds(0);
-    setGameIsOver(true);
   };
 
   let screen = <StartGameScreen onPickNumber={pickedNumbeHandler} />;
