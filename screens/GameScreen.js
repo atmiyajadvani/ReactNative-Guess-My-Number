@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import Card from '../components/ui/Card';
+import InstructionText from '../components/ui/InstructionText';
 
 
 
@@ -58,13 +60,13 @@ const GameScreen = ({userNumber, onGameOver}) => {
         <View style={styles.screen}>
             <Title>Opponent's Screen</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <View>
-                <Text>Higher or Lower</Text>
+            <Card>
+                <InstructionText>Higher or Lower</InstructionText>
                 <View style={styles.buttonsContainer}>
                     <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')} style={styles.buttonContainer}>-</PrimaryButton>
                     <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')} style={styles.buttonContainer}>+</PrimaryButton>
                 </View>
-            </View>
+            </Card>
         </View>
     );
 }

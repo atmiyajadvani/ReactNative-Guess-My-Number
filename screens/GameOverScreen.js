@@ -1,4 +1,4 @@
-import {Text, View, Button, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 
 const GameOverScreen = (props) => {
     return (
