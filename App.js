@@ -3,6 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import {useState} from 'react';
+import { StatusBar } from 'expo-status-bar';
 
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
@@ -56,6 +57,7 @@ export default function App() {
       <ImageBackground source={require('./assets/background.png')} imageStyle={styles.backgroundImage} style={styles.rootScreen} resizeMode="cover">
         <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
+      <StatusBar style="light" />
     </LinearGradient>
   );
 }
